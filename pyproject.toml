@@ -1,0 +1,21 @@
+[project]
+name = "pilotea"
+version = "0.1.0"
+description = "AI-powered guide for life administration and personal procedures."
+authors = [
+    { name = "Gisela Belmonte Cruz" }
+]
+dependencies = [
+    "pydantic-ai>=0.0.18",
+    "openai",
+    "duckduckgo-search",
+    "python-dotenv",
+    "pydantic>=2.0.0",
+    "fastapi",
+    "uvicorn"
+]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
