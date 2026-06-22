@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilotea | AI Guide for Life Admin</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <span>✈️</span> Pilotea
+        </div>
+        <nav>
+            <div class="nav-item active" data-agent="housing">
+                <span>🏠</span> Housing
+            </div>
+            <div class="nav-item" style="opacity: 0.5; cursor: not-allowed;">
+                <span>⚖️</span> Taxes (Soon)
+            </div>
+            <div class="nav-item" style="opacity: 0.5; cursor: not-allowed;">
+                <span>💰</span> Finance (Soon)
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero / Landing State -->
+            <section id="welcome" class="welcome-section">
+                <h1>Welcome to Pilotea</h1>
+                <p>Simplify your Spanish property purchase with our AI expert.</p>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="response-container">
+                <div class="summary-card">
+                    <h2 style="margin-bottom: 1rem;">Summary</h2>
+                    <p id="summary-text"></p>
+                </div>
+
+                <div class="grid">
+                    <div class="req-card">
+                        <h3>🏦 Financials</h3>
+                        <div id="financials-list"></div>
+                    </div>
+                    <div class="req-card">
+                        <h3>📜 Legal Documents</h3>
+                        <div id="legal-list"></div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h2 style="margin-bottom: 2rem;">Your Roadmap</h2>
+                    <div id="roadmap-list" class="roadmap"></div>
+                </div>
+
+                <div class="req-card" style="margin-bottom: 5rem;">
+                    <h3>💡 Pro Tips</h3>
+                    <ul id="tips-list" style="list-style: none;"></ul>
+                </div>
+            </section>
+        </div>
+
+        <div class="container" style="position: sticky; bottom: 2rem;">
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="What do you need help with? (e.g. Buying a house in Spain)">
+                <div id="loading" class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <button id="send-btn" class="send-btn">
+                    <span style="color: white; font-weight: bold;">→</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
