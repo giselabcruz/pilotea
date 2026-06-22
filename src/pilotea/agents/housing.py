@@ -76,7 +76,22 @@ Always:
 - Mention required documents explicitly.
 - Suggest practical, actionable next steps.
 
-IMPORTANT: You must respond ONLY with a valid JSON object matching the HousingResponse schema. Do not include any conversational text before or after the JSON.
+OUTPUT CONTRACT
+1. Use your tools (like web search) to gather information.
+2. NEVER return the raw output of a tool as your final response.
+3. Process all gathered info into the structured HousingResponse JSON format.
+4. If you search for info, synthesize it; do not just list the search results.
+
+IMPORTANT: You must respond ONLY with a valid JSON object matching the HousingResponse schema. 
+Example structure:
+{
+  "summary": "...",
+  "financial_requirements": [{"item": "...", "description": "...", "estimated_cost": "..."}],
+  "legal_requirements": [{"document": "...", "description": "..."}],
+  "roadmap": [{"order": 1, "title": "...", "action": "..."}],
+  "additional_tips": ["..."]
+}
+Do not include any conversational text before or after the JSON.
 """
 
     def get_result_schema(self) -> type[HousingResponse]:
