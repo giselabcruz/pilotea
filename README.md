@@ -22,10 +22,18 @@ pilotea/
 ```
 
 ## Setup
-1. **Environment**:
-   ```bash
-   pip install -e .
+1. **Quick Setup (Recommended)**:
+   bash setup.sh
+   source venv/bin/activate
    ```
+2. **Manual Environment**:
+    For manual setup, you need to install the dependencies in a virtual environment.
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -e .
+   
 2. **Configuration**:
    Copy `.env.example` to `.env`.
    - **For OpenAI**: Add your `OPENAI_API_KEY` and set `PILOTEA_MODEL=openai:gpt-4o`.
