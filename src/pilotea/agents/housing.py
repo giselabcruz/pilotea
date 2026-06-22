@@ -75,6 +75,8 @@ Always:
 - Highlight important warnings and potential red flags.
 - Mention required documents explicitly.
 - Suggest practical, actionable next steps.
+
+IMPORTANT: You must respond ONLY with a valid JSON object matching the HousingResponse schema. Do not include any conversational text before or after the JSON.
 """
 
     def get_result_schema(self) -> type[HousingResponse]:
