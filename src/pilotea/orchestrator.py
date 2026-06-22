@@ -19,6 +19,7 @@ class PiloteaOrchestrator:
         self.router = Agent(
             self.model_name,
             output_type=RoutingResult,
+            retries=3,
             system_prompt=(
                 "You are the Pilotea Router. Your job is to analyze the user's request "
                 "and route it to the correct specialized agent. "
@@ -27,7 +28,8 @@ class PiloteaOrchestrator:
                 "- 'tax' (coming soon): For tax-related questions. "
                 "- 'finance' (coming soon): For general personal finance or payslip questions. "
                 "If the topic is not covered yet, still categorize it into the closest one or "
-                "recommend 'housing' if it's the only one available for now."
+                "recommend 'housing' if it's the only one available for now.\n\n"
+                "IMPORTANT: You MUST respond with a valid JSON object matching the requested schema."
             )
         )
         self.agents = {

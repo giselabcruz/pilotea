@@ -19,6 +19,7 @@ class BaseAgent(ABC, Generic[T]):
             self.model_name,
             output_type=self.get_result_schema(),
             system_prompt=self.get_system_prompt(),
+            retries=3,
         )
         self.register_tools()
 
