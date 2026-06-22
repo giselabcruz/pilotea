@@ -1,5 +1,6 @@
 import sys
 import os
+import traceback
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 
@@ -13,6 +14,9 @@ from typing import Any
 
 load_dotenv()
 
+if "ollama" in os.getenv("PILOTEA_MODEL", "") and not os.getenv("OLLAMA_BASE_URL"):
+    os.environ["OLLAMA_BASE_URL"] = "http://localhost:11434/v1"
+
 app = FastAPI(title="Pilotea API")
 
 orchestrator = PiloteaOrchestrator()
@@ -23,9 +27,11 @@ class QueryRequest(BaseModel):
 @app.post("/api/query")
 async def handle_query(request: QueryRequest):
     try:
+        print(f"Processing query: {request.query}")
         result = await orchestrator.handle_query(request.query)
         return result
     except Exception as e:
+        print(f"--- API ERROR ---\n{traceback.format_exc()}")
         raise HTTPException(status_code=500, detail=str(e))
 
 static_dir = os.path.join(os.path.dirname(__file__), "static")
