@@ -3,17 +3,14 @@ import os
 from dotenv import load_dotenv
 from src.pilotea.orchestrator import PiloteaOrchestrator
 
-# Load environment variables
 load_dotenv()
 
 async def main():
-    # Ensure environment variables are loaded
     load_dotenv()
     
     orchestrator = PiloteaOrchestrator()
     print(f"Using model: {orchestrator.model_name}")
 
-    # Ensure API key is set if using OpenAI
     if "openai" in orchestrator.model_name and not os.getenv("OPENAI_API_KEY"):
         print("Error: OPENAI_API_KEY not found in environment. Please set it in your .env file or switch to Ollama.")
         return
