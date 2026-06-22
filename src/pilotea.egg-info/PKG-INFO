@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: pilotea
+Version: 0.1.0
+Summary: AI-powered guide for life administration and personal procedures.
+Author: Gisela Belmonte Cruz
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: pydantic-ai>=0.0.18
+Requires-Dist: openai
+Requires-Dist: duckduckgo-search
+Requires-Dist: python-dotenv
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Dynamic: license-file

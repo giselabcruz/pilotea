@@ -1,3 +1,4 @@
+from typing import Any, Optional
 from src.pilotea.agents.base import BaseAgent
 from src.pilotea.schemas.housing import HousingResponse
 from src.pilotea.tools.search import search_web, format_search_results
