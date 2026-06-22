@@ -14,12 +14,9 @@ The Agent knows what is the problem of that you have, and it will send you to th
 
 For example, if you have a problem with your taxes, it will send you to the tax agent. If you have a problem with your payslip, it will send you to the Finance agent. 
 
-# Agents
-
-- Tax Agent: Handles tax-related issues.
-- Finance Agent: Handles finance-related issues.
-- Legal Agent: Handles legal-related issues.
-
-
 If you have some problem that involves more areas, the agents will communicate with each other to solve your problem. 
+
+
+MVP1: Housing Agent
+- What I need to buy my first house in Spain?
 
