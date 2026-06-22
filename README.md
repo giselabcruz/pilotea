@@ -37,6 +37,12 @@ pilotea/
           ollama run llama3.1
           ```
 3. **Run**:
-   ```bash
-   python src/pilotea/main.py
-   ```
+   - **CLI Mode**:
+     ```bash
+     python src/pilotea/main.py
+     ```
+   - **Web UI Mode** (Recommended):
+     ```bash
+     python src/pilotea/api.py
+     ```
+     Then open [http://localhost:8000](http://localhost:8000) in your browser.
