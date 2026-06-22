@@ -17,7 +17,7 @@ class BaseAgent(ABC, Generic[T]):
         
         self.agent = Agent(
             self.model_name,
-            result_type=self.get_result_schema(),
+            output_type=self.get_result_schema(),
             system_prompt=self.get_system_prompt(),
         )
         self.register_tools()
@@ -39,4 +39,4 @@ class BaseAgent(ABC, Generic[T]):
     async def run(self, user_input: str, deps: Any = None) -> T:
         """Execute the agent run."""
         result = await self.agent.run(user_input, deps=deps)
-        return result.data
+        return result.output

@@ -18,7 +18,7 @@ class PiloteaOrchestrator:
         
         self.router = Agent(
             self.model_name,
-            result_type=RoutingResult,
+            output_type=RoutingResult,
             system_prompt=(
                 "You are the Pilotea Router. Your job is to analyze the user's request "
                 "and route it to the correct specialized agent. "
@@ -37,7 +37,7 @@ class PiloteaOrchestrator:
     async def handle_query(self, query: str) -> Any:
         """Route the query and return the result from the specialized agent."""
         routing = await self.router.run(query)
-        agent_type = routing.data.agent_type
+        agent_type = routing.output.agent_type
         
         if agent_type in self.agents:
             agent = self.agents[agent_type]
