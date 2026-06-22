@@ -39,5 +39,5 @@ class BaseAgent(ABC, Generic[T]):
 
     async def run(self, user_input: str, deps: Any = None) -> T:
         """Execute the agent run."""
-        result = await self.agent.run(user_input, deps=deps)
+        result = await self.agent.run(user_input, deps=deps, retries=3)
         return result.output

@@ -38,7 +38,7 @@ class PiloteaOrchestrator:
 
     async def handle_query(self, query: str) -> Any:
         """Route the query and return the result from the specialized agent."""
-        routing = await self.router.run(query)
+        routing = await self.router.run(query, retries=3)
         agent_type = routing.output.agent_type
         
         if agent_type in self.agents:
